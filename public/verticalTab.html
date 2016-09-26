@@ -59,7 +59,6 @@
 
     <div class="tab-content">
       <div id="tab1" class="tab-pane active">
-        <p>Categoly Name 1</p>
         <div itemtype="item">
           <div class="bottom-level meta-item" title="">
             <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="All Items">
@@ -86,7 +85,30 @@
         </div>
       </div>
       <div id="tab2" class="tab-pane">
-        <p>Categoly Name 2</p>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox5" class="right-pane-checkbox" value="tab2 All Items">
+            <label for="browse-item-checkbox5">All Item</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox6" class="right-pane-checkbox" value="tab2 child 1">
+            <label for="browse-item-checkbox6">tab2 child 1</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox7" class="right-pane-checkbox" value="tab2 child 2">
+            <label for="browse-item-checkbox7">tab2 child 2</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox8" class="right-pane-checkbox" value="tab2 child 3">
+            <label for="browse-item-checkbox8">tab2 child 3</label>
+          </div>
+        </div>
       </div>
       <div id="tab3" class="tab-pane">
         <p>Categoly Name 3</p>
@@ -96,7 +118,7 @@
 
   <div>
       <h2>選択されたカテゴリ</h2>
-      <div class="checkedList">
+      <div id="checkedList" class="checkedList">
 
       </div>
   </div>
@@ -110,10 +132,20 @@
   $(function(){
 
     $('input').click(function(){
+      const $categolyName = $(this).val();
+      const $categolyTitle = $('.nav .active').text();
+      const $itemId = $(this).attr('id');
+
       if($(this).prop('checked')){
-        var hoge = $(this).val();
-        console.log(hoge);
+
+        const $checkedItem = new Array($categolyTitle, $categolyName);
+
+        $('#checkedList').append('<p class="checkedList--item" data-item-id='+$itemId+'>' +$checkedItem+ '<span class="checkedList--itemDelete">x削除</span></p>');
+
+        console.log($itemId, $checkedItem);
+
       } else {
+        $('[data-item-id='+$itemId+']').hide();
         console.log('miss');
       }
     })
