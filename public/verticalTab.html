@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>verticalTab</title>
+  <link rel="stylesheet" href="src/css/bootstrap.min.css">
+
+  <style>
+    .navList {
+      width: 500px;
+      height: 500px;
+      border: 1px solid #eee;
+      position: relative;
+      padding-left: 200px;
+      margin: 20px auto;
+    }
+
+    .navList .nav-tabs {
+      width: 200px;
+      height: 100%;
+      overflow-x: scroll;
+      border: none;
+      position: absolute;
+      background: #eee;
+      left: 0;
+      top: 0;
+    }
+
+    .navList .nav-tabs li {
+      float: none;
+      display: block;
+    }
+
+    .navList .nav-tabs a {
+      margin-right: -1px;
+      border-radius: 0;
+      border: none;
+    }
+
+    .navList .nav-tabs li.active a {
+      border: none;
+    }
+
+    .navList .tab-content {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navList">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#tab1" data-toggle="tab">Categoly Name 1</a></li>
+      <li role="presentation"><a href="#tab2" data-toggle="tab">Categoly Name 2</a></li>
+      <li role="presentation"><a href="#tab3" data-toggle="tab">Categoly Name 3</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="tab1" class="tab-pane active">
+        <p>Categoly Name 1</p>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="1">
+            <label for="browse-item-checkbox1">All item</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="2">
+            <label for="browse-item-checkbox2">child 1</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="3">
+            <label for="browse-item-checkbox3">child 2</label>
+          </div>
+        </div>
+        <div itemtype="item">
+          <div class="bottom-level meta-item" title="">
+            <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="4">
+            <label for="browse-item-checkbox4">child 3</label>
+          </div>
+        </div>
+      </div>
+      <div id="tab2" class="tab-pane">
+        <p>Categoly Name 2</p>
+      </div>
+      <div id="tab3" class="tab-pane">
+        <p>Categoly Name 3</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="src/js/bootstrap.min.js"></script>
+</body>
+
+</html>
