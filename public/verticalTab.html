@@ -62,25 +62,25 @@
         <p>Categoly Name 1</p>
         <div itemtype="item">
           <div class="bottom-level meta-item" title="">
-            <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="1">
-            <label for="browse-item-checkbox1">All item</label>
+            <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="All Items">
+            <label for="browse-item-checkbox1">All Item</label>
           </div>
         </div>
         <div itemtype="item">
           <div class="bottom-level meta-item" title="">
-            <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="2">
+            <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="child 1">
             <label for="browse-item-checkbox2">child 1</label>
           </div>
         </div>
         <div itemtype="item">
           <div class="bottom-level meta-item" title="">
-            <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="3">
+            <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="child 2">
             <label for="browse-item-checkbox3">child 2</label>
           </div>
         </div>
         <div itemtype="item">
           <div class="bottom-level meta-item" title="">
-            <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="4">
+            <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="child 3">
             <label for="browse-item-checkbox4">child 3</label>
           </div>
         </div>
@@ -94,8 +94,32 @@
     </div>
   </div>
 
+  <div>
+      <h2>選択されたカテゴリ</h2>
+      <div class="checkedList">
+
+      </div>
+  </div>
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="src/js/bootstrap.min.js"></script>
+
+  <script>
+  $(function(){
+
+    $('input').click(function(){
+      if($(this).prop('checked')){
+        var hoge = $(this).val();
+        console.log(hoge);
+      } else {
+        console.log('miss');
+      }
+    })
+
+  });
+  </script>
 </body>
 
 </html>
