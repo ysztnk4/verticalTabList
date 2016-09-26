@@ -151,8 +151,10 @@
 
     $('#checkedList').on('click', 'button', function(){
       const itemId = $(this).parents().data('itemid');
-      console.log(itemId);
+      const metaItemId = '#' + itemId;
+      console.log(metaItemId);
       removeItem(itemId);
+      $(metaItemId).prop('checked', false);
 
     })
 
