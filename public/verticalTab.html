@@ -119,7 +119,6 @@
   <div>
       <h2>選択されたカテゴリ</h2>
       <div id="checkedList" class="checkedList">
-
       </div>
   </div>
 
@@ -131,23 +130,30 @@
   <script>
   $(function(){
 
-    $('input').click(function(){
+    function removeItem(itemId){
+      $('[data-itemid='+itemId+']').remove();
+      console.log( itemId+ 'removed');
+    }
+
+    $('input').on('click', function(){
       const $categolyName = $(this).val();
       const $categolyTitle = $('.nav .active').text();
       const $itemId = $(this).attr('id');
 
       if($(this).prop('checked')){
-
         const $checkedItem = new Array($categolyTitle, $categolyName);
-
-        $('#checkedList').append('<p class="checkedList--item" data-item-id='+$itemId+'>' +$checkedItem+ '<span class="checkedList--itemDelete">x削除</span></p>');
-
+        $('#checkedList').append('<p class="checkedList--item" data-itemid='+$itemId+'>' +$checkedItem+ '<button class="itemDeleteButton">x削除</button></p>');
         console.log($itemId, $checkedItem);
-
       } else {
-        $('[data-item-id='+$itemId+']').hide();
-        console.log('miss');
+        removeItem($itemId);
       }
+    })
+
+    $('#checkedList').on('click', 'button', function(){
+      const itemId = $(this).parents().data('itemid');
+      console.log(itemId);
+      removeItem(itemId);
+
     })
 
   });
