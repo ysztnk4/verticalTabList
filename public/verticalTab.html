@@ -133,32 +133,29 @@
   'use strict';
 
     $(function(){
+
     function removeItem(itemId){
       $('[data-itemid='+itemId+']').remove();
-      console.log( itemId+ 'removed');
     }
 
     $('input').on('click', function(){
-      const $categolyName = $(this).val();
-      const $categolyTitle = $('.nav .active').text();
-      const $itemId = $(this).attr('id');
+      var $categolyName = $(this).val();
+      var $categolyTitle = $('.nav .active').text();
+      var $itemId = $(this).attr('id');
 
       if($(this).prop('checked')){
-        const $checkedItem = new Array($categolyTitle, $categolyName);
+        var $checkedItem = new Array($categolyTitle, $categolyName);
         $('#checkedList').append('<p class="checkedList--item" data-itemid='+$itemId+'>' +$checkedItem+ '<button class="itemDeleteButton">x削除</button></p>');
-        console.log($itemId, $checkedItem);
       } else {
         removeItem($itemId);
       }
     })
 
     $('#checkedList').on('click', 'button', function(){
-      const itemId = $(this).parents().data('itemid');
-      const metaItemId = '#' + itemId;
-      console.log(metaItemId);
+      var itemId = $(this).parents().data('itemid');
+      var metaItemId = '#' + itemId;
       removeItem(itemId);
       $(metaItemId).prop('checked', false);
-
     })
 
   });
