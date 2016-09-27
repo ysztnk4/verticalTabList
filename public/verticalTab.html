@@ -128,8 +128,11 @@
   <script src="src/js/bootstrap.min.js"></script>
 
   <script>
-  $(function(){
 
+(function($){
+  'use strict';
+
+    $(function(){
     function removeItem(itemId){
       $('[data-itemid='+itemId+']').remove();
       console.log( itemId+ 'removed');
@@ -159,6 +162,9 @@
     })
 
   });
+
+}).call(this, jQuery);
+
   </script>
 </body>
 
