@@ -7,78 +7,75 @@
   <link rel="stylesheet" href="src/css/bootstrap.min.css">
 
   <style>
-    .navList {
-      width: 500px;
-      height: 500px;
-      border: 1px solid #eee;
-      position: relative;
-      padding-left: 200px;
-      margin: 20px auto;
-    }
+  .navList {
+    border: 1px solid #eee;
+    position: relative;
+    padding-left: 200px;
+  }
 
-    .navList .nav-tabs {
-      width: 200px;
-      height: 100%;
-      overflow-x: scroll;
-      border: none;
-      position: absolute;
-      background: #eee;
-      left: 0;
-      top: 0;
-    }
+  .navList .nav-tabs {
+    height: 100%;
+    overflow-x: scroll;
+    border: none;
+    position: absolute;
+    background: #eee;
+    left: 0;
+    top: 0;
+  }
 
-    .navList .nav-tabs li {
-      float: none;
-      display: block;
-    }
+  .navList .nav-tabs li {
+    float: none;
+    display: block;
+  }
 
-    .navList .nav-tabs a {
-      margin-right: -1px;
-      border-radius: 0;
-      border: none;
-    }
+  .navList .nav-tabs a {
+    margin-right: -1px;
+    border-radius: 0;
+    border: none;
+  }
 
-    .navList .nav-tabs li.active a {
-      border: none;
-    }
+  .navList .nav-tabs li.active a {
+    border: none;
+  }
 
-    .navList .tab-content {
-      padding: 10px;
-    }
+  .navList .tab-content {
+    padding: 10px;
+  }
   </style>
 </head>
 
 <body>
 
+<div class="row">
+  <div class="col-md-5">
   <div class="navList">
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#tab1" data-toggle="tab">Categoly Name 1</a></li>
       <li role="presentation"><a href="#tab2" data-toggle="tab">Categoly Name 2</a></li>
-      <li role="presentation"><a href="#tab3" data-toggle="tab">Categoly Name 3</a></li>
     </ul>
 
     <div class="tab-content">
       <div id="tab1" class="tab-pane active">
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="All Items">
             <label for="browse-item-checkbox1">All Item</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="child 1">
             <label for="browse-item-checkbox2">child 1</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="child 2">
             <label for="browse-item-checkbox3">child 2</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="child 3">
             <label for="browse-item-checkbox4">child 3</label>
           </div>
@@ -86,41 +83,50 @@
       </div>
       <div id="tab2" class="tab-pane">
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox5" class="right-pane-checkbox" value="tab2 All Items">
             <label for="browse-item-checkbox5">All Item</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox6" class="right-pane-checkbox" value="tab2 child 1">
             <label for="browse-item-checkbox6">tab2 child 1</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox7" class="right-pane-checkbox" value="tab2 child 2">
             <label for="browse-item-checkbox7">tab2 child 2</label>
           </div>
         </div>
         <div itemtype="item">
-          <div class="bottom-level meta-item" title="">
+          <div class="bottom-level meta-item">
             <input type="checkbox" id="browse-item-checkbox8" class="right-pane-checkbox" value="tab2 child 3">
             <label for="browse-item-checkbox8">tab2 child 3</label>
           </div>
         </div>
       </div>
-      <div id="tab3" class="tab-pane">
-        <p>Categoly Name 3</p>
+    </div>
+
+  </div>
+  <!-- End of .navList -->
+</div>
+
+  <div class="col-md-3">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">選択されたカテゴリー</h3>
+    </div>
+    <div class="panel-body">
+      <div id="checkedList" class="checkedList">
       </div>
     </div>
   </div>
-
-  <div>
-      <h2>選択されたカテゴリー</h2>
-      <div id="checkedList" class="checkedList">
-      </div>
+  <!-- End of .panel -->
   </div>
+</div>
+<!-- Eof .row -->
 
 
 
@@ -128,40 +134,44 @@
   <script src="src/js/bootstrap.min.js"></script>
 
   <script>
+  (function($) {
+    'use strict';
 
-(function($){
-  'use strict';
+    $(function() {
 
-    $(function(){
-
-    function removeItem(itemId){
-      $('[data-itemid='+itemId+']').remove();
-    }
-
-    $('input').on('click', function(){
-      var $categolyName = $(this).val();
-      var $categolyTitle = $('.nav .active').text();
-      var $itemId = $(this).attr('id');
-
-      if($(this).prop('checked')){
-        var $checkedItem = new Array($categolyTitle, $categolyName);
-        $('#checkedList').append('<p class="checkedList--item" data-itemid='+$itemId+'>' +$checkedItem+ '<button class="itemDeleteButton">x削除</button></p>');
-      } else {
-        removeItem($itemId);
+      function removeItem(itemId) {
+        $('[data-itemid=' + itemId + ']').remove();
       }
-    })
 
-    $('#checkedList').on('click', 'button', function(){
-      var itemId = $(this).parents().data('itemid');
-      var metaItemId = '#' + itemId;
-      removeItem(itemId);
-      $(metaItemId).prop('checked', false);
-    })
+      // item を選択したときの処理
+      $('input').on('click', function() {
+        var $categolyName = $(this).val();
+        var $categolyTitle = $('.nav .active').text();
+        var $itemId = $(this).attr('id');
 
-  });
+        if ($(this).prop('checked')) {
 
-}).call(this, jQuery);
+          var $checkedItem = new Array($categolyTitle, $categolyName);
 
+          $('#checkedList').append('<p class="checkedList--item" data-itemid=' + $itemId + '>' + $checkedItem + '<button class="itemDeleteButton">x削除</button></p>');
+        } else {
+          removeItem($itemId);
+        }
+      })
+
+      // 削除をクリックした時の処理
+      $('#checkedList').on('click', 'button', function() {
+
+        var itemId = $(this).parents().data('itemid');
+        var metaItemId = '#' + itemId;
+
+        removeItem(itemId);
+        $(metaItemId).prop('checked', false);
+      })
+
+    });
+
+  }).call(this, jQuery);
   </script>
 </body>
 
