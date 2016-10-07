@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="src/css/bootstrap.min.css">
 
   <style>
-  .navList {
+  .verticalTabList {
+    height:400px;
     border: 1px solid #eee;
     position: relative;
-    padding-left: 200px;
+    padding-left: 40%;
   }
 
-  .navList .nav-tabs {
+  .verticalTabList .nav-tabs {
     height: 100%;
+    width:40%;
     overflow-x: scroll;
     border: none;
     position: absolute;
@@ -23,110 +25,140 @@
     top: 0;
   }
 
-  .navList .nav-tabs li {
+  .verticalTabList .nav-tabs li {
     float: none;
     display: block;
   }
 
-  .navList .nav-tabs a {
+  .verticalTabList .nav-tabs a {
     margin-right: -1px;
     border-radius: 0;
     border: none;
   }
 
-  .navList .nav-tabs li.active a {
+  .verticalTabList .nav-tabs li.active a {
     border: none;
   }
 
-  .navList .tab-content {
+  .verticalTabList .tab-content {
     padding: 10px;
+    height: 100%;
+    overflow-x: scroll;
   }
+  .checkedList--item {
+    display:inline-block;
+    border-radius:3px;
+    margin:2px;
+    background:#eee;
+    color:#888;
+  }
+  .checkedList--item span {
+    padding :10px;
+  }
+  .checkedList--item button {
+    padding:10px;
+    background:#888;
+    color:#fff;
+    border:none;
+    line-height:1;
+    outline:none;
+  }
+  .checkedList--item button:hover {
+    background:#666;
+  }
+
   </style>
 </head>
 
 <body>
 
-<div class="row">
-  <div class="col-md-5">
-  <div class="navList">
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#tab1" data-toggle="tab">Categoly Name 1</a></li>
-      <li role="presentation"><a href="#tab2" data-toggle="tab">Categoly Name 2</a></li>
-    </ul>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="verticalTabList">
 
-    <div class="tab-content">
-      <div id="tab1" class="tab-pane active">
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="All Items">
-            <label for="browse-item-checkbox1">All Item</label>
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><a href="#tab1" data-toggle="tab">Categoly Name 1</a></li>
+          <li role="presentation"><a href="#tab2" data-toggle="tab">Categoly Name 2</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="tab1" class="tab-pane active">
+
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox1" class="right-pane-checkbox" value="All Items">
+                <label for="browse-item-checkbox1">All Item</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="child 1">
+                <label for="browse-item-checkbox2">child 1</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="child 2">
+                <label for="browse-item-checkbox3">child 2</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="child 3">
+                <label for="browse-item-checkbox4">child 3</label>
+              </div>
+            </div>
+
           </div>
-        </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox2" class="right-pane-checkbox" value="child 1">
-            <label for="browse-item-checkbox2">child 1</label>
+          <!-- End of tab-pane -->
+
+          <div id="tab2" class="tab-pane">
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox5" class="right-pane-checkbox" value="tab2 All Items">
+                <label for="browse-item-checkbox5">All Item</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox6" class="right-pane-checkbox" value="hyper long text category doyadoya">
+                <label for="browse-item-checkbox6">hyper long text category doyadoya</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox7" class="right-pane-checkbox" value="tab2 child 2">
+                <label for="browse-item-checkbox7">tab2 child 2</label>
+              </div>
+            </div>
+            <div itemtype="item">
+              <div class="bottom-level meta-item">
+                <input type="checkbox" id="browse-item-checkbox8" class="right-pane-checkbox" value="tab2 child 3">
+                <label for="browse-item-checkbox8">tab2 child 3</label>
+              </div>
+            </div>
           </div>
+          <!-- End of tab-pane -->
         </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox3" class="right-pane-checkbox" value="child 2">
-            <label for="browse-item-checkbox3">child 2</label>
-          </div>
+        <!-- End of tab-content -->
+      </div>
+      <!-- End of .verticalTabList -->
+    </div>
+
+    <div class="col-md-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">選択中のカテゴリー</h3>
         </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox4" class="right-pane-checkbox" value="child 3">
-            <label for="browse-item-checkbox4">child 3</label>
+        <div class="panel-body">
+          <div id="checkedList" class="checkedList">
           </div>
         </div>
       </div>
-      <div id="tab2" class="tab-pane">
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox5" class="right-pane-checkbox" value="tab2 All Items">
-            <label for="browse-item-checkbox5">All Item</label>
-          </div>
-        </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox6" class="right-pane-checkbox" value="tab2 child 1">
-            <label for="browse-item-checkbox6">tab2 child 1</label>
-          </div>
-        </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox7" class="right-pane-checkbox" value="tab2 child 2">
-            <label for="browse-item-checkbox7">tab2 child 2</label>
-          </div>
-        </div>
-        <div itemtype="item">
-          <div class="bottom-level meta-item">
-            <input type="checkbox" id="browse-item-checkbox8" class="right-pane-checkbox" value="tab2 child 3">
-            <label for="browse-item-checkbox8">tab2 child 3</label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <!-- End of .navList -->
-</div>
-
-  <div class="col-md-3">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h3 class="panel-title">選択されたカテゴリー</h3>
-    </div>
-    <div class="panel-body">
-      <div id="checkedList" class="checkedList">
-      </div>
+      <!-- End of .panel -->
     </div>
   </div>
-  <!-- End of .panel -->
-  </div>
-</div>
-<!-- Eof .row -->
+  <!-- Eof .row -->
 
 
 
@@ -153,7 +185,7 @@
 
           var $checkedItem = new Array($categolyTitle, $categolyName);
 
-          $('#checkedList').append('<p class="checkedList--item" data-itemid=' + $itemId + '>' + $checkedItem + '<button class="itemDeleteButton">x削除</button></p>');
+          $('#checkedList').append('<div class="checkedList--item" data-itemid=' + $itemId + '><span>' + $checkedItem + '</span><button class="">&times;</button></div>');
         } else {
           removeItem($itemId);
         }
