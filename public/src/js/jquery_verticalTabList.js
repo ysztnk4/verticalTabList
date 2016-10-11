@@ -12,12 +12,12 @@
     $('input').on('click', function() {
 
       var $thisItemId = $(this).attr('id');
-      var $categolyTitle = $('.nav .active').text();
-      var $categolyName = $(this).val();
-      var $checkedItem = new Array($categolyTitle, $categolyName);
+      var $categolyName = $('.nav .active').text();
+      var $itemName = $(this).val();
+      var $checkedItemTitle = new Array($categolyName, $itemName);
 
       if ($(this).prop('checked')) {
-        $('#checkedList').append('<div class="checkedList--item" data-itemid=' + $thisItemId + '><span>' + $checkedItem + '</span><button class="">&times;</button></div>');
+        $('#checkedList').append('<div class="checkedList--item" data-itemid=' + $thisItemId + '><span>' + $checkedItemTitle + '</span><button class="">&times;</button></div>');
       } else {
         removeCheckedItem($thisItemId);
       }
