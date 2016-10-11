@@ -3,33 +3,33 @@
 
   $(function() {
 
-    function removeItem(itemId) {
+    // 選択中のカテゴリーからアイテムを削除する関数
+    function removeCheckedItem(itemId) {
       $('[data-itemid=' + itemId + ']').remove();
     }
 
-    // item を選択したときの処理
+    // チェックボックスの処理
     $('input').on('click', function() {
-      var $categolyName = $(this).val();
+
+      var $thisItemId = $(this).attr('id');
       var $categolyTitle = $('.nav .active').text();
-      var $itemId = $(this).attr('id');
+      var $categolyName = $(this).val();
+      var $checkedItem = new Array($categolyTitle, $categolyName);
 
       if ($(this).prop('checked')) {
-
-        var $checkedItem = new Array($categolyTitle, $categolyName);
-
-        $('#checkedList').append('<div class="checkedList--item" data-itemid=' + $itemId + '><span>' + $checkedItem + '</span><button class="">&times;</button></div>');
+        $('#checkedList').append('<div class="checkedList--item" data-itemid=' + $thisItemId + '><span>' + $checkedItem + '</span><button class="">&times;</button></div>');
       } else {
-        removeItem($itemId);
+        removeCheckedItem($thisItemId);
       }
     })
 
-    // 削除をクリックした時の処理
+    // 削除ボタンの処理
     $('#checkedList').on('click', 'button', function() {
 
-      var itemId = $(this).parents().data('itemid');
-      var metaItemId = '#' + itemId;
+      var dataItemId = $(this).parents().data('itemid');
+      var metaItemId = '#' + dataItemId;
 
-      removeItem(itemId);
+      removeCheckedItem(dataItemId);
       $(metaItemId).prop('checked', false);
     })
 
