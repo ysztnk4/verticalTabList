@@ -1,0 +1,69 @@
+.verticalTabList {
+  position: relative;
+  height: 400px;
+  padding-left: 40%;
+  border: 1px solid #eee;
+}
+
+.verticalTabList .nav-tabs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: scroll;
+  width: 40%;
+  height: 100%;
+  border: none;
+  background: #eee;
+}
+
+.verticalTabList .nav-tabs li {
+  display: block;
+  float: none;
+}
+
+.verticalTabList .nav-tabs a {
+  margin-right: -1px;
+  border: none;
+  border-radius: 0;
+}
+
+.verticalTabList .nav-tabs a:hover {
+  background: #ddd;
+}
+
+.verticalTabList .nav-tabs li.active a {
+  border: none;
+}
+
+.verticalTabList .tab-content {
+  overflow-x: scroll;
+  height: 100%;
+  padding: 10px;
+}
+
+.checkedList--item {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 35px 5px 10px;
+  color: #555;
+  border-radius: 3px;
+  background: #eee;
+}
+
+.checkedList--item button {
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #888;
+}
+
+.checkedList--item button:hover {
+  background: #666;
+}
