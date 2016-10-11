@@ -1,9 +1,16 @@
 # Vertical Tab List
 
-Custom Components of Bootstrap tab.
+Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型のタブリスト。
+
+## 使い方
+
+### いるもの
+- jQuery
+- Bootstrap
+- jquery_verticalTabList.js
+- verticalTabList.css
+
 
 ## Heroku Deploy
 
-add heroku deploy.
-
-## test auto deploy
+Hreroku 連携済み
