@@ -45,6 +45,12 @@
   cursor: pointer;
 }
 
+.checkedList {
+  overflow-x: scroll;
+  min-height: 200px;
+  max-height: 330px;
+}
+
 .checkedList--item {
   position: relative;
   display: inline-block;
