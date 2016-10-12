@@ -41,6 +41,10 @@
   padding: 10px;
 }
 
+.verticalTabList .tab-content label, .verticalTabList .tab-content input {
+  cursor: pointer;
+}
+
 .checkedList--item {
   position: relative;
   display: inline-block;
