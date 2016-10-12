@@ -9,7 +9,7 @@
         }
 
         // チェックボックスの処理
-        $('input').on('click', function() {
+        $('.item_input').on('click', function() {
 
             (new Array(100))
             var thisItemId = $(this).attr('id'),
