@@ -2,6 +2,8 @@
 
 Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型のタブリスト。
 
+[DEMO](https://vertical-tab-list.herokuapp.com/)
+
 ## ファイル構造
 
 ```ファイル構造
