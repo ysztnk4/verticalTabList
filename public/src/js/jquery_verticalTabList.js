@@ -5,7 +5,7 @@
 
         // 選択中のカテゴリーからアイテムを削除する関数
         function removeCheckedItem(itemId) {
-            $('[data-itemid=' + itemId + ']').remove();
+            $('[data-itemId=' + itemId + ']').remove();
         }
 
         // チェックボックスの処理
@@ -18,7 +18,7 @@
                 checkedItemTitle = [categolyName, itemName];
 
             if ($(this).prop('checked')) {
-                $('#checkedList').append('<div class="checkedList--item" data-itemid=' + thisItemId + '><span>' + checkedItemTitle + '</span><button class="">&times;</button></div>');
+                $('#checkedList').append('<div class="checkedList--item" data-itemId=' + thisItemId + '><span>' + checkedItemTitle + '</span><button class="">&times;</button></div>');
             } else {
                 removeCheckedItem(thisItemId);
             }
@@ -27,7 +27,7 @@
         // 削除ボタンの処理
         $('#checkedList').on('click', 'button', function() {
 
-            var dataItemId = $(this).parents().data('itemid'),
+            var dataItemId = $(this).parent().data('itemid'),
                 metaItemId = '#' + dataItemId;
 
             removeCheckedItem(dataItemId);
