@@ -1,11 +1,11 @@
-.verticalTabList {
+#verticalTabList .verticalTabList__container {
   position: relative;
   height: 400px;
   padding-left: 40%;
   border: 1px solid #eee;
 }
 
-.verticalTabList .nav-tabs {
+#verticalTabList .nav-tabs {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,42 +16,42 @@
   background: #eee;
 }
 
-.verticalTabList .nav-tabs li {
+#verticalTabList .nav-tabs li {
   display: block;
   float: none;
 }
 
-.verticalTabList .nav-tabs a {
+#verticalTabList .nav-tabs a {
   margin-right: -1px;
   border: none;
   border-radius: 0;
 }
 
-.verticalTabList .nav-tabs a:hover {
+#verticalTabList .nav-tabs a:hover {
   background: #ddd;
 }
 
-.verticalTabList .nav-tabs li.active a {
+#verticalTabList .nav-tabs li.active a {
   border: none;
 }
 
-.verticalTabList .tab-content {
+#verticalTabList .tab-content {
   overflow-x: scroll;
   height: 100%;
   padding: 10px;
 }
 
-.verticalTabList .tab-content label, .verticalTabList .tab-content input {
+#verticalTabList .tab-content label, #verticalTabList .tab-content input {
   cursor: pointer;
 }
 
-.checkedList {
+#verticalTabList .checkedList {
   overflow-x: scroll;
   min-height: 200px;
   max-height: 330px;
 }
 
-.checkedList--item {
+#verticalTabList .checkedList__item {
   position: relative;
   display: inline-block;
   margin: 5px;
@@ -61,7 +61,7 @@
   background: #eee;
 }
 
-.checkedList--item button {
+#verticalTabList .checkedList__item button {
   line-height: 1;
   position: absolute;
   top: 0;
@@ -74,6 +74,6 @@
   background: #888;
 }
 
-.checkedList--item button:hover {
+#verticalTabList .checkedList__item button:hover {
   background: #666;
 }

@@ -8,7 +8,7 @@
         }
 
         // チェックボックスの処理
-        var $itemInput = $('.verticalTabList .item_input');
+        var $itemInput = $('.verticalTabList__container .item_input');
 
         $itemInput.on('click', function() {
             (new Array(100))
@@ -18,7 +18,7 @@
                 checkedItemTitle = [categolyName, itemName];
 
             if ($(this).prop('checked')) {
-                $('#checkedList').append('<div class="checkedList--item" data-itemId=' + thisItemId + '><span>' + checkedItemTitle + '</span><button class="">&times;</button></div>');
+                $('#checkedList').append('<div class="checkedList__item" data-itemId=' + thisItemId + '><span>' + checkedItemTitle + '</span><button class="">&times;</button></div>');
             } else {
                 removeCheckedItem(thisItemId);
             }
