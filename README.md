@@ -6,16 +6,16 @@ Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型の�
 
 ```ファイル構造
 
-- public
- - index.html
- - template.html
- - src
-  - css
-   - jquery_verticalTabList.css
-   - bootstrap.min.css
-  - js
-   - jquery_verticalTabList.js
-   - bootstrap.min.js
+-┬- public
+ ├- index.html
+ ├- template.html
+ └- src
+  ├--- css
+  │ ├- jquery_verticalTabList.css
+  │ └- bootstrap.min.css
+  └-- js
+   ├- jquery_verticalTabList.js
+   └- bootstrap.min.js
 
 ```
 
