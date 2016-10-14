@@ -32,6 +32,8 @@ Bootstrap 3のタブをcssで整形、jqueryで動作させてます。
 - jquery_verticalTabList.css
 
 
+## html構造
+
 ```html
 
 <div id="verticalTabList" class="row">
