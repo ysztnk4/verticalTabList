@@ -2,7 +2,26 @@
 
 Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型のタブリスト。
 
+## ファイル構造
+
+```ファイル構造
+
+- public
+ - index.html
+ - template.html
+ - src
+  - css
+   - jquery_verticalTabList.css
+   - bootstrap.min.css
+  - js
+   - jquery_verticalTabList.js
+   - bootstrap.min.js
+
+```
+
 ## 使い方
+
+Bootstrap 3のタブをcssで整形、jqueryで動作させてます。
 
 ### いるもの
 - jQuery
@@ -12,23 +31,8 @@ Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型の�
 - jquery_verticalTabList.js
 - jquery_verticalTabList.css
 
-### ソース
 
-```
-
-- public
- - index.html
- - template.html
- - src
-  - css
-   - jquery_verticalTabList.css
-  - js
-   - jquery_verticalTabList.js
-
-```
-
-
-```html:template.html
+```html
 
 <div id="verticalTabList" class="row">
   <div class="col-md-5">
@@ -77,7 +81,7 @@ Bootstrap3のTabをベースにスタイルとjsの調整を加えた縦型の�
   <div class="col-md-3">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title">選択中のアイテム</h3>
+        <h3 class="panel-title">Checked Items</h3>
       </div>
       <div class="panel-body">
         <div id="checkedList" class="checkedList">
