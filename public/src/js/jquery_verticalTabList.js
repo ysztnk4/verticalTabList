@@ -11,7 +11,6 @@
         var $itemInput = $('.verticalTabList__container .item_input');
 
         $itemInput.on('click', function() {
-            (new Array(100))
             var thisItemId = $(this).attr('id'),
                 categolyName = $('.nav .active').text(),
                 itemName = $(this).val(),
